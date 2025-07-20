@@ -47,10 +47,10 @@ This project is a web application consisting of a frontend and backend. Follow t
    npm start
    ```
 
-5. In another terminal window/tab, start the backend server:
+5. In another terminal window/tab, start the frontend server:
 
    ```bash
-   cd backend
+   cd frontend
    npm run dev
    ```
 
