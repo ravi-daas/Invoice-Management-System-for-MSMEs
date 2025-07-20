@@ -11,7 +11,7 @@ This project is a web application consisting of a frontend and backend. Follow t
 
    Open your terminal and run:  
    ```bash
-   git clone [<repository-url>](https://github.com/ravi-daas/Invoice-Management-System-for-MSMEs)
+   git clone https://github.com/ravi-daas/Invoice-Management-System-for-MSMEs
 
 Replace `<repository-url>` with the actual URL of the repository.
 
