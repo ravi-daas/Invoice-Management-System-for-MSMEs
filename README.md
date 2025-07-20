@@ -13,8 +13,6 @@ This project is a web application consisting of a frontend and backend. Follow t
    ```bash
    git clone https://github.com/ravi-daas/Invoice-Management-System-for-MSMEs
 
-Replace `<repository-url>` with the actual URL of the repository.
-
 2. **Navigate into the project folder**
 
    ```bash
@@ -37,7 +35,10 @@ Replace `<repository-url>` with the actual URL of the repository.
    npm install
    ```
 
-2. **Generate Prisma client**
+2. **Add Database URL**
+   Add a .env file in backend folder and place Database Url under "DATABASE_URL" variable
+
+3. **Generate Prisma client**
    Go back to the backend folder and generate the Prisma client:
 
    ```bash
@@ -45,7 +46,7 @@ Replace `<repository-url>` with the actual URL of the repository.
    npx prisma generate
    ```
 
-3. **Start the frontend**
+4. **Start the frontend**
    In a new terminal window/tab, start the frontend development server:
 
    ```bash
@@ -53,7 +54,7 @@ Replace `<repository-url>` with the actual URL of the repository.
    npm run dev
    ```
 
-4. **Start the backend**
+5. **Start the backend**
    In another terminal window/tab, start the backend server:
 
    ```bash
@@ -67,7 +68,7 @@ Replace `<repository-url>` with the actual URL of the repository.
 
 * Make sure you have **Node.js** and **npm** installed.
 * Prisma may require a database setup depending on your app configuration.
-* The frontend typically runs on `http://localhost:3000` and backend on `http://localhost:5000` (or as configured).
+* The frontend typically runs on `http://localhost:5173` and backend on `http://localhost:5000` (or as configured).
 
 ---
 
