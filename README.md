@@ -16,10 +16,8 @@ This project is a web application consisting of a frontend and backend. Follow t
 2. **Navigate into the project folder**
 
    ```bash
-   cd <project-folder-name>
+   cd Invoice-Management-System-for-MSMEs
    ```
-
-   Replace `<project-folder-name>` with the name of the cloned folder.
 
 ---
 
