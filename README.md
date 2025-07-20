@@ -23,8 +23,7 @@ This project is a web application consisting of a frontend and backend. Follow t
 
 ## How to Run the Web App
 
-1. **Install dependencies**
-   Install necessary packages for both backend and frontend:
+1. Install necessary packages for both backend and frontend:
 
    ```bash
    cd backend
@@ -33,31 +32,26 @@ This project is a web application consisting of a frontend and backend. Follow t
    npm install
    ```
 
-2. **Add Database URL**
-   Add a .env file in backend folder and place Database Url under "DATABASE_URL" variable
+2. Add a .env file in backend folder and place Database Url under "DATABASE_URL" variable
 
-3. **Generate Prisma client**
-   Go back to the backend folder and generate the Prisma client:
+3. Go back to the backend folder and generate the Prisma client:
 
    ```bash
    cd ../backend
    npx prisma generate
    ```
 
-4. **Start the frontend**
-   In a new terminal window/tab, start the frontend development server:
+4. Start the backend development server:
 
    ```bash
-   cd frontend
-   npm run dev
+   npm start
    ```
 
-5. **Start the backend**
-   In another terminal window/tab, start the backend server:
+5. In another terminal window/tab, start the backend server:
 
    ```bash
    cd backend
-   npm start
+   npm run dev
    ```
 
 ---
@@ -65,8 +59,8 @@ This project is a web application consisting of a frontend and backend. Follow t
 ## Additional Notes
 
 * Make sure you have **Node.js** and **npm** installed.
-* Prisma may require a database setup depending on your app configuration.
-* The frontend typically runs on `http://localhost:5173` and backend on `http://localhost:5000` (or as configured).
+* Prisma require a database setup.
+* The frontend will run on `http://localhost:5173` and backend on `http://localhost:5000` (or as configured).
 
 ---
 
