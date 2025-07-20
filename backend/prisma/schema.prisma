@@ -1,0 +1,151 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id    String  @id @default(auto()) @map("_id") @db.ObjectId
+  email String?
+}
+
+model InvoiceItem {
+  id          String      @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+  quantity    Int
+  rate        Float
+  amount      Float
+  gstRate     Float
+  cgstRate    Float
+  sgstRate    Float
+  igstRate    Float
+  hsnCode     String?
+  invoiceData InvoiceData @relation(fields: [invoiceId], references: [id])
+  invoiceId   String
+}
+
+model InvoiceData {
+  id                String        @id @default(auto()) @map("_id") @db.ObjectId
+  invoiceNo         String
+  invoiceDate       String
+  dueDate           String
+  invoiceTime       String?
+  phoneNo           String?
+  termOfPayment     String? 
+  RefNo             String?
+  OtherRef          String?
+  DispatchDocNo     String?
+  deliveryNoteDate  String?
+  deliveryNote      String?
+  DispatchedThrough String?
+  Destination       String?
+  deliveryDate      String?
+  BuyerOrderNo      String?
+  billedBy          Json
+  billedTo          Json
+  items             InvoiceItem[]
+  gstType           String
+  currencySymbol    String
+  currency          String
+  totalSGST         Float
+  totalCGST         Float
+  totalIGST         Float
+  total             Float
+  taxableAmount     Float
+  totalTax          Float
+  paid              Boolean
+}
+
+model QuotationData {
+  id             String          @id @default(auto()) @map("_id") @db.ObjectId
+  quotationNo    String
+  quotationDate  String
+  dueDate        String
+  billedBy       Json
+  billedTo       Json
+  gstType        String
+  currencySymbol String
+  currency       String
+  totalSGST      Float
+  totalCGST      Float
+  totalIGST      Float
+  total          Float
+  taxableAmount  Float
+  totalTax       Float
+  paid           Boolean
+  items          QuotationItem[]
+}
+
+model QuotationItem {
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  quotationId String
+  name        String
+  quantity    Int
+  rate        Float
+  amount      Float
+  gstRate     Float
+  cgstRate    Float
+  sgstRate    Float
+  igstRate    Float
+  hsnCode     String?
+  quotation   QuotationData @relation(fields: [quotationId], references: [id], onDelete: Cascade)
+}
+
+model Client {
+  id           String  @id @default(uuid()) @map("_id")
+  type         String
+  businessName String
+  industry     String?
+  address      String?
+  logo         String?
+  taxId        String?
+  gstIn        String?
+  createdAt    DateTime @default(now())
+}
+
+model Product {
+  id         String  @id @default(auto()) @map("_id") @db.ObjectId
+  name       String
+  sku        String  @unique
+  category   String
+  quantity   Int
+  price      Float
+  status     String
+  hsnCode    String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  inventory  InventoryState @relation(fields: [inventoryId], references: [id]) 
+  inventoryId String 
+}
+
+model InventoryState {
+  id             String  @id @default(auto()) @map("_id") @db.ObjectId
+  totalProducts  Int
+  lowStockItems  Int
+  outOfStockItems Int
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  products       Product[]
+}
+
+model Profile {
+  id             String  @id @default(auto()) @map("_id") @db.ObjectId
+  fullName      String
+  displayName   String
+  email         String  @unique
+  phoneNumber   String  @unique
+  bio           String?
+  profileImage  String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model HSNCode {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  hsnCode     String
+  description String
+  gstRate     Float
+}

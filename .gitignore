@@ -1,0 +1,42 @@
+# Node modules
+/backend/node_modules/
+/frontend/node_modules/
+
+# Environment variables
+/backend/.env
+/frontend/.env
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build output
+/frontend/build/
+/backend/dist/
+/backend/build/
+
+# Coverage reports
+coverage/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE/editor folders
+.vscode/
+.idea/
+
+# Optional: local development overrides
+*.local
+
+# Optional: testing artifacts
+*.test.ts.snap
+*.test.js.snap
+
+# Optional: TypeScript cache
+*.tsbuildinfo
+
+# Optional: Next.js (if used in frontend)
+/frontend/.next/
