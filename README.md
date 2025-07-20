@@ -12,7 +12,6 @@ This project is a web application consisting of a frontend and backend. Follow t
    Open your terminal and run:  
    ```bash
    git clone <repository-url>
-````
 
 Replace `<repository-url>` with the actual URL of the repository.
 
@@ -73,12 +72,3 @@ Replace `<repository-url>` with the actual URL of the repository.
 ---
 
 If you need help or run into issues, feel free to open an issue on the repository!
-
-```
-
----
-
-Just replace `<repository-url>` and `<project-folder-name>` with your actual repo URL and folder name.
-
-Let me know if you want me to prepare it with actual links or details!
-```
